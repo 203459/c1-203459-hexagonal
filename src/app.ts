@@ -1,13 +1,13 @@
 import express from "express";
 import cors from "cors";
 import "dotenv/config";
-import { userRoutes } from "./users/infrastructure/userRoutes";
+import { reviewRoutes} from "./reviews/infrastructure/reviewRoutes";
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use('/api/v1/users/', userRoutes);
+app.use('/api/v1/reviews/', reviewRoutes);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
